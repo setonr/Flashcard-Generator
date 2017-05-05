@@ -1,0 +1,27 @@
+[
+  {
+    "cloze": "The Declaration of Independence was signed in 1776.",
+    "partial": "The Declaration of Independence was signed in ....",
+    "fullText": "1776"
+  },
+  {
+    "cloze": "The traditional religion of Japan is Shinto.",
+    "partial": "The traditional religion of Japan is ....",
+    "fullText": "Shinto"
+  },
+  {
+    "cloze": "There are 7 continents on earth.",
+    "partial": "There are ... continents on earth.",
+    "fullText": "7"
+  },
+  {
+    "cloze": "Shakespeare wrote 37 plays.",
+    "partial": "Shakespeare wrote ... plays.",
+    "fullText": "37"
+  },
+  {
+    "cloze": "The Lord of the Rings takes place in Middle Earth.",
+    "partial": "The Lord of the Rings takes place in ....",
+    "fullText": "Middle Earth"
+  }
+]

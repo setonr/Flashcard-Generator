@@ -1,4 +1,6 @@
-var BasicCard = require("./BasicCard.js");
+var inquirer = require("inquirer");
+
+var fs = require("fs");
 
 var ClozeCard = function(cloze, partial, fullText) {
 	this.cloze = cloze;
@@ -6,20 +8,44 @@ var ClozeCard = function(cloze, partial, fullText) {
 	this.fullText = fullText;
 };
 
-var numberOfLetters = new ClozeCard(
-	"26", "There are ... letters in the alphabet", "There are 26 letters in the alphabet.");
+var count = 0;
 
-console.log(numberOfLetters.cloze);
-console.log(numberOfLetters.partial);
-console.log(numberOfLetters.fullText);
+var questionArray = [];
 
-//somehow get it to throw error if the cloze word they enter isn't in the question
-// for (var i = 0; i < this.fullText.length; i++) {
-// 	if (ClozeCard.cloze !== this.fullText[i]) {
-// 		console.log("Oops! That word/phrase doesn't appear in the quesion.");
-// 	}
-// }
+var addCloze = function() {
+	if (count < 5) {
+		inquirer.prompt([
+		{
+			name: "full",
+			message: "Type your full text statement!",
+			type: "input"
+		}, {
+			name: "partial",
+			message: "Type your partial question without the cloze word or phrase!",
+			type: "input"
+		}, {
+			name: "cloze",
+			message: "Type your cloze word or phrase",
+			type: "input"
+		}
+		]).then(function(questions) {
+			var newQuestion = new ClozeCard(
+				questions.full,
+				questions.partial,
+				questions.cloze);
+
+			questionArray.push(newQuestion);
+
+			fs.writeFile("ClozeCard.json", JSON.stringify(questionArray, null, 2));
+
+			count++;
+
+			addCloze();
+		});
+	}
+};
 
 
+addCloze();
 
 module.exports = ClozeCard;

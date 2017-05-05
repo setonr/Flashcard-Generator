@@ -1,22 +1,22 @@
 [
   {
-    "front": "Jesus",
-    "back": "33"
-  },
-  {
-    "front": "Dec of Ind",
+    "front": "What year was the Declaration of Independence signed?",
     "back": "1776"
   },
   {
-    "front": "Continents",
-    "back": "7"
-  },
-  {
-    "front": "Japan ",
+    "front": "What is the traditional religion of Japan?",
     "back": "Shinto"
   },
   {
-    "front": "plays",
+    "front": "How many continents are there on earth?",
+    "back": "7"
+  },
+  {
+    "front": "How many plays did Shakespeare write?",
     "back": "37"
+  },
+  {
+    "front": "In what land does The Lord of the Rings take place?",
+    "back": "Middle Earth"
   }
 ]
